@@ -57,7 +57,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
   }, []);
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-white border-t">
+    <form onSubmit={handleSubmit} className="p-1 bg-white border-t">
       <div className="flex flex-col gap-2 max-w-4xl mx-auto">
         {/* Typing indicator above the input */}
         {typingUsers.length > 0 && (
@@ -71,7 +71,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
             value={message}
             onChange={handleChange}
             placeholder="Type a message..."
-            className="flex-1 p-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 hover:bg-white transition-colors"
+            className="flex-1 p-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 hover:bg-white transition-colors"
           />
           <button
             type="submit"

@@ -15,20 +15,20 @@ export const MessageList: React.FC<MessageListProps> = ({
   userColors,
 }) => {
   return (
-    <div className="flex-1 p-4 space-y-4">
+    <div className="flex-1 p-4 space-y-2">
       {messages.map((message) => {
         const isCurrentUser = message.userId === currentUserId;
         return (
           <div
             key={message.id}
             className={clsx(
-              'flex gap-2',
+              'flex gap-3',
               isCurrentUser ? 'justify-end' : 'justify-start'
             )}
           >
             {!isCurrentUser && (
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm"
+                className="w-8 h-5 rounded-full flex items-center justify-center text-white text-sm"
                 style={{ backgroundColor: userColors[message.userId] }}
               >
                 {message.userId.slice(0, 2).toUpperCase()}

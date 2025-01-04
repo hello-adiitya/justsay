@@ -28,7 +28,7 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
 
   return (
     <div className={`flex-1 flex flex-col ${showContact ? 'lg:border-r' : ''}`}>
-      <div className="flex-1 overflow-y-auto" style={{ height: 'calc(100vh - 128px)' }}>
+      <div className="flex-1 overflow-y-auto py-8" style={{ height: 'calc(100vh - 128px)' }}>
         <MessageList
           messages={messages}
           currentUserId={userId}
