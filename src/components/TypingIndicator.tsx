@@ -8,7 +8,7 @@ export const TypingIndicator: React.FC<TypingIndicatorProps> = ({ typingUsers })
   if (typingUsers.length === 0) return null;
 
   return (
-    <div className="text-sm text-gray-500 italic px-4 py-2">
+    <div className="text-sm text-gray-500 italic">
       {typingUsers.map(userId => (
         <div key={userId} className="flex items-center gap-2">
           <span>User {userId.slice(0, 6)} is typing</span>

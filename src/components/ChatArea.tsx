@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { MessageList } from './MessageList';
 import { MessageInput } from './MessageInput';
-import { TypingIndicator } from './TypingIndicator';
 import { Message } from '../types/chat';
 import { useTyping } from '../hooks/useTyping';
 
@@ -25,7 +24,7 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView();
-  }, [messages, typingUsers]);
+  }, [messages]);
 
   return (
     <div className={`flex-1 flex flex-col ${showContact ? 'lg:border-r' : ''}`}>
@@ -35,11 +34,14 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
           currentUserId={userId}
           userColors={userColors}
         />
-        <TypingIndicator typingUsers={typingUsers} />
         <div ref={messagesEndRef} />
       </div>
       <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg lg:max-w-4xl mx-auto">
-        <MessageInput onSendMessage={sendMessage} onTyping={setTyping} />
+        <MessageInput 
+          onSendMessage={sendMessage} 
+          onTyping={setTyping}
+          typingUsers={typingUsers} 
+        />
       </div>
     </div>
   );
