@@ -6,9 +6,14 @@ export const ContactUs: React.FC = () => {
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
       <div className="space-y-4">
+      <div className="flex items-center gap-3">
+          <div>
+            {/* <p className="font-medium">Note!</p> */}
+            <p className="font-medium"> *** Chat will auto deleted after 24 hours.</p>
+          </div>
+        </div>
         <div className="flex items-center gap-3">
           <Mail className="w-5 h-5 text-blue-500" />
-          <p className="font-medium"> *** Chat will auto deleted after 24 hours.</p>
           <div>
             <p className="font-medium">Email</p>
             <a href="adityagupta2253@gmail.com" className="text-blue-500 hover:underline">
@@ -21,7 +26,7 @@ export const ContactUs: React.FC = () => {
           <Phone className="w-5 h-5 text-blue-500" />
           <div>
             <p className="font-medium">Phone</p>
-            <p>+91 829954715@</p>
+            <p>+91 8299547156</p>
           </div>
         </div>
         
