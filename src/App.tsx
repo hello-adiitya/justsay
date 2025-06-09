@@ -5,7 +5,6 @@ import { ContactSidebar } from './components/ContactSidebar';
 import { useUser } from './hooks/useUser';
 import { useMessages } from './hooks/useMessages';
 import { useColors } from './hooks/useColors';
-import ContactUs from './components/ContactUs';
 
 export default function App() {
   const userId = useUser();
@@ -16,13 +15,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto bg-white shadow-xl min-h-screen flex flex-col">
-        
-        <ContactUs />
         <Header 
           userId={userId} 
           showContact={showContact} 
           setShowContact={setShowContact} 
-          
         />
         <div className="flex flex-1 pt-16 relative">
           <ChatArea 
