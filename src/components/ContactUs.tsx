@@ -52,42 +52,50 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, MessageSquare } from 'lucide-react';
 
-export const ContactUsModal: React.FC = () => {
+const ContactUs: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => setIsOpen(!isOpen);
 
   return (
     <>
-      {/* Trigger Button/Icon */}
-      <button onClick={toggleModal} className="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600">
+      {/* Floating Contact Icon Button */}
+      <button
+        onClick={toggleModal}
+        className="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600"
+      >
         <MessageSquare className="w-6 h-6" />
       </button>
 
-      {/* Modal Background */}
+      {/* Modal Popup */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
             {/* Close Button */}
             <button
               onClick={toggleModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-black"
+              className="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
             >
               ✖
             </button>
 
-            {/* Contact Info */}
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
+
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <p className="font-medium">*** Chat will auto delete after 24 hours.</p>
+                <p className="font-medium text-red-600">
+                  *** Chat will auto delete after 24 hours.
+                </p>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-500" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <a href="mailto:support@chatus.com" className="text-blue-500 hover:underline">
+                  <a
+                    href="mailto:support@chatus.com"
+                    className="text-blue-500 hover:underline"
+                  >
                     support@chatus.com
                   </a>
                 </div>
@@ -123,3 +131,5 @@ export const ContactUsModal: React.FC = () => {
     </>
   );
 };
+
+export default ContactUs;
