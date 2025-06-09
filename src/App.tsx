@@ -5,7 +5,7 @@ import { ContactSidebar } from './components/ContactSidebar';
 import { useUser } from './hooks/useUser';
 import { useMessages } from './hooks/useMessages';
 import { useColors } from './hooks/useColors';
-import ContactUs from './ContactUs';
+import ContactUs from './components/ContactUs';
 
 export default function App() {
   const userId = useUser();
