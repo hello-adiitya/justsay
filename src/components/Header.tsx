@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Info } from 'lucide-react';
+import profile2 from '../assets/images/profile2.jpg';
 
 interface HeaderProps {
   userId: string;
@@ -13,7 +14,11 @@ export const Header: React.FC<HeaderProps> = ({ userId, showContact, setShowCont
       <div className="flex items-center gap-2">
         <MessageCircle className="w-6 h-6 animate-pulse" />
         <h1 className="text-xl font-bold">Just Say</h1>
+        <a href="https://helloadiitya.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src={profile2} alt="Profile" className="w-7 h-7 rounded-full animate-pulse ml-3" />
+        </a>
       </div>
+     
       <div className="flex items-center gap-4">
         <div className="text-sm bg-white/10 px-3 py-1 rounded-full">
           ID: {userId.slice(0, 6)}
